@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:login_ui_one/screens/signup_screen.dart';
+import 'package:login_ui_one/screens/login_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +23,12 @@ class LoginScreen extends StatelessWidget {
           children: <Widget>[
             const SizedBox(height: 80),
             const Text(
-              "Login",
+              "Sign Up",
               style: TextStyle(color: Colors.white, fontSize: 48),
             ),
             const SizedBox(height: 10),
             const Text(
-              "Welcome Back",
+              "Create New Account",
               style: TextStyle(color: Colors.white, fontSize: 24),
             ),
             const SizedBox(height: 20),
@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: Column(
                     children: <Widget>[
-                      const SizedBox(height: 60),
+                      const SizedBox(height: 30),
                       Container(
                         padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
@@ -71,7 +71,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                               child: const TextField(
                                 decoration: InputDecoration(
-                                  hintText: "Email or Phone Number",
+                                  hintText: "Name",
                                   hintStyle: TextStyle(color: Colors.grey),
                                   border: InputBorder.none,
                                 ),
@@ -87,6 +87,16 @@ class LoginScreen extends StatelessWidget {
                               ),
                               child: const TextField(
                                 decoration: InputDecoration(
+                                  hintText: "Email",
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  border: InputBorder.none,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              child: const TextField(
+                                decoration: InputDecoration(
                                   hintText: "Password",
                                   hintStyle: TextStyle(color: Colors.grey),
                                   border: InputBorder.none,
@@ -95,13 +105,6 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      const Text(
-                        "Forgot Password?",
-                        style: TextStyle(color: Colors.grey),
                       ),
                       const SizedBox(
                         height: 40,
@@ -115,7 +118,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         child: const Center(
                           child: Text(
-                            "Login",
+                            "Sign Up",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
@@ -124,71 +127,24 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(
-                        height: 60,
-                      ),
-                      const Text("Don't have an account? "),
-                      InkWell(
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SignupScreen()),
-                        ),
-                        child: const Text(
-                          "Sign Up",
-                          style: TextStyle(
-                            color: Colors.orange,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 60,
+                        height: 30,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Expanded(
-                            child: Container(
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Colors.blue,
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  "Facebook",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 30,
-                          ),
-                          Expanded(
-                            child: Container(
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Colors.black,
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  "Github",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15,
-                                  ),
-                                ),
+                          const Text("Already have an account? "),
+                          InkWell(
+                            onTap: () => Navigator.pop(context),
+                            child: const Text(
+                              "Login",
+                              style: TextStyle(
+                                color: Colors.orange,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
